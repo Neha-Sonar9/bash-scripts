@@ -1,0 +1,14 @@
+===== Log Analysis Report =====
+Date of Analysis: 2026-10-08
+Log File: ./logfile-app
+Total Lines Processed:       16
+Total Error Count: 3
+
+--- Top 5 Error Messages ---
+   1    [PaymentService]: Transaction failed for Order #88271A: Gateway timeout from processor.
+   1    [PaymentService]: java.net.SocketTimeoutException: Read timed out
+   1    [DatabaseClient]: Connection pool exhausted. Active connections: 100/100. Queued requests: 45.
+
+--- Critical Events ---
+Line 13:[2026-10-08 00:45:35.099] [CRITICAL] [DatabaseMaster]: Main database cluster 'db-primary-01' has entered an unresponsive state. Connection refused.
+Line 14:[2026-10-08 00:45:35.100] [CRITICAL] [SystemMonitor]: Core application state degraded. Shutting down active ingress routes to prevent cascading corruption.

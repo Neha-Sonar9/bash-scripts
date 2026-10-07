@@ -1,0 +1,15 @@
+THRESHOLD=70
+
+echo "Disk Usage Report — Threshold: ${THRESHOLD}%"
+echo "============================================"
+
+df -h | grep "^/dev/disk" | while read line; do
+    USAGE=$(echo $line | awk '{print $5}' | tr -d '%')
+    MOUNT=$(echo $line  | awk '{print $9}')
+
+    if [ "$USAGE" -gt "$THRESHOLD" ] 2>/dev/null; then
+        echo "⚠️  ALERT : $MOUNT is at ${USAGE}%"
+    else
+        echo "✅ OK     : $MOUNT is at ${USAGE}%"
+    fi
+done

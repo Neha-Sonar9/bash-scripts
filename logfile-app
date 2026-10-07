@@ -1,0 +1,16 @@
+[2026-10-08 00:45:10.124] [INFO] [AuthService]: User 'john_doe@example.com' successfully authenticated via OAuth2.
+[2026-10-08 00:45:12.501] [INFO] [CartService]: Item 'SKU-99281' added to cart for Session ID: 8f9a2c3d.
+[2026-10-08 00:45:15.892] [WARN] [InventoryService]: Low stock warning for SKU-99281. Only 2 remaining in warehouse-east.
+[2026-10-08 00:45:22.011] [INFO] [PaymentService]: Initiating checkout processing for Order #88271A.
+[2026-10-08 00:45:23.415] [ERROR] [PaymentService]: Transaction failed for Order #88271A: Gateway timeout from processor.
+[2026-10-08 00:45:23.416] [ERROR] [PaymentService]: java.net.SocketTimeoutException: Read timed out
+    at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+    at com.ecommerce.payment.GatewayClient.execute(GatewayClient.java:142)
+[2026-10-08 00:45:25.002] [INFO] [PaymentService]: Retrying checkout processing for Order #88271A (Attempt 2/3)...
+[2026-10-08 00:45:30.005] [ERROR] [DatabaseClient]: Connection pool exhausted. Active connections: 100/100. Queued requests: 45.
+[2026-10-08 00:45:32.118] [WARN] [RoutingEngine]: High latency detected on service mesh node 'mesh-node-infra-4'. Response time: 4200ms.
+[2026-10-08 00:45:35.099] [CRITICAL] [DatabaseMaster]: Main database cluster 'db-primary-01' has entered an unresponsive state. Connection refused.
+[2026-10-08 00:45:35.100] [CRITICAL] [SystemMonitor]: Core application state degraded. Shutting down active ingress routes to prevent cascading corruption.
+[2026-10-08 00:45:36.502] [INFO] [LoadBalancer]: Diverting all incoming HTTP traffic to static 'Down for Maintenance' fallback page.
+
