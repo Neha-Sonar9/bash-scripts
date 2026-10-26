@@ -32,7 +32,9 @@ critical_events(){
 err_msgs(){
      top_err_msgs_count=$(
            grep "ERROR" "$log_file" | 
-           awk '{$1=$2=$3=""; print}' | sort | uniq -c | sort -rn | head -3 || true )
+           awk '{$1=$2=$3=""; print}' | 
+           sed -E 's/#?[0-9][0-9A-Za-z]*/N/g' |
+           sort | uniq -c | sort -rn | head -3 || true )
      echo -e "\n--- Top 3 Error Messages ---"
      echo "$top_err_msgs_count"
 }

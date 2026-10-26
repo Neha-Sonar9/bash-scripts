@@ -13,4 +13,8 @@
 [2026-10-08 00:45:35.099] [CRITICAL] [DatabaseMaster]: Main database cluster 'db-primary-01' has entered an unresponsive state. Connection refused.
 [2026-10-08 00:45:35.100] [CRITICAL] [SystemMonitor]: Core application state degraded. Shutting down active ingress routes to prevent cascading corruption.
 [2026-10-08 00:45:36.502] [INFO] [LoadBalancer]: Diverting all incoming HTTP traffic to static 'Down for Maintenance' fallback page.
+[2026-10-08 00:45:38.005] [ERROR] [DatabaseClient]: Connection pool exhausted. Active connections: 10$
+[2026-10-08 00:45:40.005] [ERROR] [DatabaseClient]: Connection pool exhausted. Active connections: 10$
+[2026-10-08 00:45:48.415] [ERROR] [PaymentService]: Transaction failed for Order #88271A: Gateway timeout from processor.
+[2026-10-08 00:45:48.415] [ERROR] [PaymentService]: Transaction failed for Order #93573A: Gateway timeout from processor.
 
